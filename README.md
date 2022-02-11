@@ -20,7 +20,7 @@
 ## 2. book-request-service 내부 네이버 검색 API 설정 초기화<br/>
 ![image](https://user-images.githubusercontent.com/84068193/153155763-3e0469e7-87a8-409d-aa93-5113546902ac.png)<br/>
 
-## 3. 각 API의 datasource 연결 확인(실패)
+## 3. 각 API의 datasource 연결 확인(2월 11일 금 해결완료)
 ### 1) H2 DB활용 테스트 확인
 ![image](https://user-images.githubusercontent.com/84068193/153156913-dc8f0cfa-732a-493c-9c93-caadbea092fb.png)<br/>
 테이블이 자동생성되는 것은 확인되나 실제 DB쿼리문 확인시 테이블은 물론 DATABASE까지 존재하는지를 모르겠음..<br/>
@@ -39,5 +39,12 @@ postman 활용 소스코드 내에 지정된 파라미터를 넣어도 확인이
 ------------------------------------------------------------------------------------------------------------
 #### 추가!! (02월 11일 금)
 ![image](https://user-images.githubusercontent.com/84068193/153525590-2df0a03c-b9e5-4771-819f-f3bf78a2e9aa.png)<br/>
-build.gradle에 해당 내용 추가시 H2 DB 연동 확인 (아래는 결과창)<br/>
+(1)build.gradle에 해당 내용 추가시 H2 DB 연동 확인 (아래는 결과창)<br/>
 ![image](https://user-images.githubusercontent.com/84068193/153525675-4fcab8dc-f2e0-4d44-90d2-0553133af576.png)<br/>
+--------------------------------------------------------------------------------------------
+(2)MYSQL DB연동
+![image](https://user-images.githubusercontent.com/84068193/153532331-bc0facc5-0a0b-4638-b098-daa074bf3c9a.png)<br/>
+spring.profiles : dev => 개발환경으로 지정하여 강제적으로 H2 DB를 활용하게끔 하는 듯 주석처리<br/>
+![image](https://user-images.githubusercontent.com/84068193/153532483-2eb8730a-3dbf-49dc-9dfc-4c3e1745d0dc.png)<br/> 
+mySQL DB 연동 확인
+
