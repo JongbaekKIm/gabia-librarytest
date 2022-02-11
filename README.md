@@ -37,12 +37,12 @@ postman 활용 소스코드 내에 지정된 파라미터를 넣어도 확인이
 ### 2) mysql로 설정하여 확인하려 하였으나 jdbc가 무조건 h2로 연결되는 문제가 있음. 해결하지 못함...
 #### 추가!! 원인 : h2 DB는 메모리형 저장소인 것을 인지 하였으나 접근주소에 대해 파악중...
 ------------------------------------------------------------------------------------------------------------
-#### 추가!! (02월 11일 금)<br/>
-![image](https://user-images.githubusercontent.com/84068193/153525590-2df0a03c-b9e5-4771-819f-f3bf78a2e9aa.png)<br/>
-(1)build.gradle에 해당 내용 추가시 H2 DB 연동 확인 (아래는 결과창)<br/>
+#### 추가!! (02월 11일 금) <br/>
+![image](https://user-images.githubusercontent.com/84068193/153525590-2df0a03c-b9e5-4771-819f-f3bf78a2e9aa.png) <br/>
+(1) build.gradle에 해당 내용 추가시 H2 DB 연동 확인 (아래는 결과창) <br/>
 ![image](https://user-images.githubusercontent.com/84068193/153525675-4fcab8dc-f2e0-4d44-90d2-0553133af576.png)<br/>
---------------------------------------------------------------------------------------------
-(2)MYSQL DB연동
+------------------------------------------------------------------------------------------------------------------
+(2) MYSQL DB연동
 ![image](https://user-images.githubusercontent.com/84068193/153532331-bc0facc5-0a0b-4638-b098-daa074bf3c9a.png)<br/>
 spring.profiles : dev => 개발환경으로 지정하여 강제적으로 H2 DB를 활용하게끔 하는 듯 주석처리<br/>
 ![image](https://user-images.githubusercontent.com/84068193/153532483-2eb8730a-3dbf-49dc-9dfc-4c3e1745d0dc.png)<br/> 
