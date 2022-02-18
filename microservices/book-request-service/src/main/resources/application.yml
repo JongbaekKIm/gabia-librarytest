@@ -41,24 +41,36 @@ security:
     secret: JwtSecretKey
 
 ---
-spring:
-  profiles: dev
-  datasource:
-    url: jdbc:h2:~/book-request-service
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    database: H2
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: true
-  h2:
-    console:
-      enabled: true
-      path: /console
+#spring:
+#  profiles: dev
+#  datasource:
+#    url: jdbc:h2:~/book-request-service
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    database: H2
+#    hibernate:
+#      ddl-auto: create-drop
+#    show-sql: true
+#  h2:
+#    console:
+#      enabled: true
+#      path: /console
 
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/scottDB?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul
+    username: scott
+    password: tiger
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database: mysql
+    hibernate:
+      ddl-generate: true
+    show-sql: true
 ---
 spring.profiles: release
 spring.profiles.include: real-db
