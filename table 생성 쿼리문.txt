@@ -1,0 +1,109 @@
+-- 유저
+CREATE TABLE user (
+    id BIGINT AUTO_INCREMENT,
+    created_date TIMESTAMP,
+    updated_date TIMESTAMP,
+    authority VARCHAR(15) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    identifier VARCHAR(25) NOT NULL,
+    is_deleted BOOLEAN DEFAULT FALSE,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(15),
+    user_name VARCHAR(15) NOT NULL,
+    PRIMARY KEY (id)
+); 
+-- 책
+CREATE TABLE book (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    author VARCHAR(255) NOT NULL,
+    category VARCHAR(50),
+    content LONGTEXT,
+    created_date DATETIME(6),
+    etc VARCHAR(255),
+    extension_count INTEGER DEFAULT 0 NOT NULL,
+    identifier VARCHAR(25),
+    intro LONGTEXT,
+    is_deleted BOOLEAN DEFAULT FALSE NOT NULL,
+    is_rent BOOLEAN DEFAULT FALSE NOT NULL,
+    location VARCHAR(50),
+    modified_date DATETIME(6),
+    publish_date VARCHAR(20),
+    publisher VARCHAR(25) NOT NULL,
+    reference_url VARCHAR(255),
+    rent_expired_date DATE,
+    rent_id BIGINT,
+    review_count INTEGER DEFAULT 0 NOT NULL,
+    thumbnail VARCHAR(255),
+    title VARCHAR(255) NOT NULL,
+    total_rating INTEGER DEFAULT 0 NOT NULL,
+    PRIMARY KEY (id)
+);
+    
+-- 대여 정보
+CREATE TABLE rent (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    book_author VARCHAR(255) NOT NULL,
+    book_id BIGINT NOT NULL,
+    book_title VARCHAR(255) NOT NULL,
+    created_date DATETIME(6),
+    identifier VARCHAR(255) NOT NULL,
+    modified_date DATETIME(6),
+    rent_expired_date DATE,
+    rent_status VARCHAR(255),
+    PRIMARY KEY (id)
+);
+-- book-request
+CREATE TABLE book_request (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    created_date DATETIME(6),
+    updated_date DATETIME(6),
+    author VARCHAR(255) NOT NULL,
+    book_name VARCHAR(255) NOT NULL,
+    content LONGTEXT,
+    destination VARCHAR(255) NOT NULL,
+    is_deleted BOOLEAN DEFAULT FALSE NOT NULL,
+    publish_date VARCHAR(255),
+    publisher VARCHAR(255),
+    status VARCHAR(255) NOT NULL,
+    thumb_nail VARCHAR(255),
+    url VARCHAR(255) NOT NULL,
+    user_id BIGINT NOT NULL,
+    PRIMARY KEY (id)
+);
+-- alert
+CREATE TABLE alert (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    alert_type VARCHAR(255),
+    created_date DATETIME(6),
+    email VARCHAR(255),
+    identifier VARCHAR(25),
+    message LONGTEXT,
+    modified_date DATETIME(6),
+    title VARCHAR(255),
+    PRIMARY KEY (id)
+);
+-- review
+CREATE TABLE review (
+    id BIGINT NOT NULL,
+    book_id BIGINT NOT NULL,
+    content LONGTEXT,
+    created_date DATETIME(6),
+    identifier VARCHAR(25) NOT NULL,
+    is_deleted BOOLEAN DEFAULT FALSE NOT NULL,
+    modified_date DATETIME(6),
+    rating INTEGER DEFAULT 0 NOT NULL,
+    review_status VARCHAR(255),
+    title VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+ -- notice
+ CREATE TABLE notice (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    created_date DATETIME(6),
+    updated_date DATETIME(6),
+    content TEXT NOT NULL,
+    is_deleted BOOLEAN DEFAULT FALSE,
+    is_important BOOLEAN DEFAULT FALSE,
+    title VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
