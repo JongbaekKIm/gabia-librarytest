@@ -1,0 +1,10 @@
+{
+  "realm": "api_gateway",
+  "auth-server-url": "http://localhost:8080/auth/",
+  "ssl-required": "external",
+  "resource": "apigateway",
+  "credentials": {
+    "secret": "PLXB5LEW0g3pYzSjFl4G81Kv6WvyE2wL"
+  },
+  "confidential-port": 0
+}
