@@ -47,4 +47,14 @@ postman 활용 소스코드 내에 지정된 파라미터를 넣어도 확인이
 spring.profiles : dev => 개발환경으로 지정하여 강제적으로 H2 DB를 활용하게끔 하는 듯 주석처리<br/>
 ![image](https://user-images.githubusercontent.com/84068193/153532483-2eb8730a-3dbf-49dc-9dfc-4c3e1745d0dc.png)<br/> 
 mySQL DB 연동 확인
+--------------------------------------------------------------------------------------------------------------------
+#key cloak 연동<br/>
+##1. build.gradle(api-gateway) keycloak 관련 내용 추가<br/>
+![image](https://user-images.githubusercontent.com/84068193/155938989-ae9f2f8d-a23b-474a-a4b1-c1c1f7df0d42.png)<br/>
+##2. keycloak 서버 실행 및 realm 생성/ 설정<br/>
+![image](https://user-images.githubusercontent.com/84068193/155939272-d0ce6306-5ed9-4ef4-be0f-7794dd7b338a.png)<br/>
+● Valid Redirect URIs, Web Origins  : http://localhost:8001/*
+● scope : user, test(admin)로 구분
+##3. keycloakConfig 내부 Role 설정을 통한 각 서비스 제어<br/>
+![image](https://user-images.githubusercontent.com/84068193/155939593-0c591ae6-7a4a-4c7e-91fe-7ee66fa19778.png)<br/>
 
