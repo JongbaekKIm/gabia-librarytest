@@ -8,6 +8,8 @@
 ### 1) JDK8 버전으로 동기화필요<br/>
 ![스크린샷(1)](https://user-images.githubusercontent.com/84068193/153155063-65335df4-36f0-4e16-824c-e0315344ec49.png)<br/>
 ### 2) 프로젝트 내부설정도 동기화 진행<br/>
+카프카 및 주키퍼 설치/실행 방법 : https://oingdaddy.tistory.com/274
+<br/>
 ![image](https://user-images.githubusercontent.com/84068193/153155374-e865f812-bb2c-45d4-b285-a36014bd9b7e.png)
 ### 3) zookipper 서버 구축
 ![image](https://user-images.githubusercontent.com/84068193/153156447-ca5be7a6-f221-4ac2-b3cf-0f84b81cdcd1.png)
